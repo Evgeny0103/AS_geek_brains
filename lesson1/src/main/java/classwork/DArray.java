@@ -1,5 +1,7 @@
 package classwork;
 
+import java.util.Arrays;
+
 public class DArray<T> {
 
     private int size, capacity;
@@ -36,14 +38,18 @@ public class DArray<T> {
 
     public void add(int index, T value){
         //TODO
+        data[index] = Arrays.copyOf(data, data.length + 1);
+        data[data.length - 1] = value;
+        size++;
+
     }
 
     public void remove(int index){
         //TODO
-        System.out.println();
-        System.out.println("Хахаха вот моя домашка");
+        data[index] = Arrays.copyOf(data, data.length - 1);
+        size--;
     }
-
+// Не знаю как выполнить задание
     @Override
     public String toString() {
         //TODO
